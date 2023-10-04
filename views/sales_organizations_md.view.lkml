@@ -2,7 +2,7 @@
 view: sales_organizations_md {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.SalesOrganizationsMD`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.SalesOrganizationsMD`
     ;;
 
   # Here's what a typical dimension looks like in LookML.

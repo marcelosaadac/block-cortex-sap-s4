@@ -2,7 +2,7 @@
 view: sales_order_partner_function {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.SalesOrderPartnerFunction`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.SalesOrderPartnerFunction`
     ;;
 
   # Here's what a typical dimension looks like in LookML.

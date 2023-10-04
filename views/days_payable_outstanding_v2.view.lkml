@@ -1,6 +1,6 @@
 view: days_payable_outstanding_v2 {
   derived_table: {
-    sql: select * from `@{GCP_PROJECT}.@{REPORTING_DATASET_S4}.DaysPayableOutstanding`
+    sql: select * from `@{GCP_PROJECT}.@{REPORTING_DATASET}.DaysPayableOutstanding`
       ;;
   }
 

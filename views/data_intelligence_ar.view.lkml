@@ -2,7 +2,7 @@
 view: data_intelligence_ar {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_S4}.AccountingDocumentsReceivable`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.AccountingDocumentsReceivable`
     ;;
 
   parameter: Aging_Interval {
@@ -68,7 +68,7 @@ view: data_intelligence_ar {
 
   dimension: Accounts_Receivable_Global_Currency {
     type: number
-    sql: round(${Accounts_Receivable_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Accounts_Receivable_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Sold_to_Party_Country {
@@ -118,7 +118,7 @@ view: data_intelligence_ar {
 
   dimension: Bad_Debt_Global_Currency {
     type: number
-    sql: round(${Bad_Debt_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Bad_Debt_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Billing_Document {
@@ -166,7 +166,7 @@ view: data_intelligence_ar {
 
   dimension: Cleared_after_Due_date_Global_Currency {
     type: number
-    sql: round(${Cleared_after_Due_date_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Cleared_after_Due_date_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Cleared_on_or_before_Due_date_Local_Currency {
@@ -176,7 +176,7 @@ view: data_intelligence_ar {
 
   dimension: Cleared_on_or_before_Due_date_Global__Currency {
     type: number
-    sql: round(${Cleared_on_or_before_Due_date_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Cleared_on_or_before_Due_date_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Client_ID {
@@ -216,7 +216,7 @@ view: data_intelligence_ar {
 
   dimension: Doubtful_Receivables_Global_Currency{
     type: number
-    sql: round(${Doubtful_Receivables_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Doubtful_Receivables_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Exchange_Rate_Type {
@@ -263,7 +263,7 @@ view: data_intelligence_ar {
 
   dimension: Open_and_Not_Due_Global_Currency{
     type: number
-    sql: round(${Open_and_Not_Due_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Open_and_Not_Due_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Open_and_Over_Due_Local_Currency{
@@ -273,7 +273,7 @@ view: data_intelligence_ar {
 
   dimension: Open_and_Over_Due_Global_Currency{
     type: number
-    sql: round(${Open_and_Over_Due_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Open_and_Over_Due_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension_group: Posting {
@@ -301,7 +301,7 @@ view: data_intelligence_ar {
 
   dimension: Sales_Global_Currency{
     type: number
-    sql: round(${Sales_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Sales_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Written_off_Amount_Local_Currency {
@@ -311,7 +311,7 @@ view: data_intelligence_ar {
 
   dimension: Written_off_Amount {
     type: number
-    sql: round(${Written_off_Amount_Local_Currency} * ${currency_conversion_s4.ukurs},2) ;;
+    sql: round(${Written_off_Amount_Local_Currency} * ${currency_conversion_new.ukurs},2) ;;
   }
 
   dimension: Days_in_Arrear {

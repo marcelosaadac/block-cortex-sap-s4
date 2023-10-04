@@ -1,5 +1,5 @@
 view: materials_md {
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.MaterialsMD`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.MaterialsMD`
     ;;
 
   fields_hidden_by_default: yes

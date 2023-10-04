@@ -1,5 +1,5 @@
 view: currency_conversion_new {
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.CurrencyConversion`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.CurrencyConversion`
     ;;
 
   fields_hidden_by_default: yes

@@ -5,7 +5,7 @@ view: sales_order_schedule_line_dt {
           sales_order_schedule_line.SalesDocument_VBELN  AS sales_order_schedule_line_sales_document_vbeln,
           sales_order_schedule_line.SalesDocumentItem_POSNR  AS sales_order_schedule_line_sales_document_item_posnr,
           COALESCE(SUM(sales_order_schedule_line.ConfirmedQuantity_BMENG ), 0) AS sales_order_schedule_line_sum_confirmed_quantity_bmeng
-      FROM `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.SalesOrderScheduleLine`
+      FROM `@{GCP_PROJECT}.@{REPORTING_DATASET}.SalesOrderScheduleLine`
            AS sales_order_schedule_line
       GROUP BY
           1,

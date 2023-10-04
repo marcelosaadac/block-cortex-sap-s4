@@ -2,7 +2,7 @@
 view: accounts_payable_overview_v2 {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_S4}.AccountsPayableOverview`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.AccountsPayableOverview`
     ;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.

@@ -32,15 +32,15 @@ named_value_format: Greek_Number_Format {
 }
 
 explore: data_intelligence_ar {
-sql_always_where: ${Client_ID} = "@{CLIENT_S4}" ;;
-  join: currency_conversion_s4 {
+sql_always_where: ${Client_ID} = "@{CLIENT}" ;;
+  join: currency_conversion_new {
     type: left_outer
     relationship: one_to_many
-    sql_on: ${data_intelligence_ar.Client_ID}=${currency_conversion_s4.mandt}
-          and ${data_intelligence_ar.Local_Currency_Key}=${currency_conversion_s4.fcurr}
-          and ${data_intelligence_ar.Posting_date} = ${currency_conversion_s4.conv_date}
-          and ${currency_conversion_s4.kurst} = "M"
-          and ${currency_conversion_s4.tcurr} = {% parameter data_intelligence_ar.Currency_Required %};;
+    sql_on: ${data_intelligence_ar.Client_ID}=${currency_conversion_new.mandt}
+          and ${data_intelligence_ar.Local_Currency_Key}=${currency_conversion_new.fcurr}
+          and ${data_intelligence_ar.Posting_date} = ${currency_conversion_new.conv_date}
+          and ${currency_conversion_new.kurst} = "M"
+          and ${currency_conversion_new.tcurr} = {% parameter data_intelligence_ar.Currency_Required %};;
     fields: [] #this view used for currency convesion only so no fields need to be included in the explore
   }
 }
@@ -182,14 +182,14 @@ explore: sales_orders {
           and (${sales_order_partner_function.item_posnr} is Null or ${sales_order_partner_function_header.item_posnr} = '000000');;
     }
 
-    sql_always_where: ${client_mandt}="@{CLIENT_ECC}" ;;
+    sql_always_where: ${client_mandt}="@{CLIENT}" ;;
 
   }
 
   ########################################### Finanace Dashboards ########################################################################
 
 explore: vendor_performance {
-  sql_always_where: ${vendor_performance.client_mandt} = "@{CLIENT_ECC}"
+  sql_always_where: ${vendor_performance.client_mandt} = "@{CLIENT}"
     and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}'
     ;;
 
@@ -213,32 +213,32 @@ explore: vendor_performance {
 }
 
 explore: days_payable_outstanding_v2 {
-  sql_always_where: ${client_mandt} = "@{CLIENT_S4}" ;;
+  sql_always_where: ${client_mandt} = "@{CLIENT}" ;;
 }
 
 
 explore: accounts_payable_v2 {
 
-  sql_always_where: ${accounts_payable_v2.client_mandt} =  "@{CLIENT_S4}";;
+  sql_always_where: ${accounts_payable_v2.client_mandt} =  "@{CLIENT}";;
 }
 
 explore: cash_discount_utilization {
-  sql_always_where: ${client_mandt} = "@{CLIENT_S4}";;
+  sql_always_where: ${client_mandt} = "@{CLIENT}";;
 }
 
 
 explore: accounts_payable_overview_v2 {
 
-  sql_always_where: ${accounts_payable_overview_v2.client_mandt} =  "@{CLIENT_S4}" ;;
+  sql_always_where: ${accounts_payable_overview_v2.client_mandt} =  "@{CLIENT}" ;;
 }
 
 explore: accounts_payable_turnover_v2 {
 
-  sql_always_where: ${accounts_payable_turnover_v2.client_mandt} = "@{CLIENT_S4}" ;;
+  sql_always_where: ${accounts_payable_turnover_v2.client_mandt} = "@{CLIENT}" ;;
 }
 
 explore: materials_valuation_v2 {
-  sql_always_where: ${client_mandt} = "@{CLIENT_ECC}" ;;
+  sql_always_where: ${client_mandt} = "@{CLIENT}" ;;
 }
 
 ########################################### Finanace Dashboards End ########################################################################
@@ -247,7 +247,7 @@ explore: materials_valuation_v2 {
 
 
 explore: inventory_metrics_overview {
-  sql_always_where: ${inventory_metrics_overview.client_mandt} = "@{CLIENT_ECC}"
+  sql_always_where: ${inventory_metrics_overview.client_mandt} = "@{CLIENT}"
   and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}';;
 
   join: inventory_by_plant {
@@ -268,7 +268,7 @@ explore: inventory_metrics_overview {
 }
 
 explore: inventory_by_plant {
-    sql_always_where: ${inventory_by_plant.client_mandt} = "@{CLIENT_ECC}"
+    sql_always_where: ${inventory_by_plant.client_mandt} = "@{CLIENT}"
         and ${language_map.looker_locale}='{{ _user_attributes['locale'] }}'
     ;;
 

@@ -2,7 +2,7 @@
 view: one_touch_order {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.OneTouchOrder`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.OneTouchOrder`
     ;;
 
   # Here's what a typical dimension looks like in LookML.

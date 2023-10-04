@@ -1,5 +1,5 @@
 view: vendor_performance {
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.VendorPerformance` ;;
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.VendorPerformance` ;;
   fields_hidden_by_default: yes
 
   measure: average_amount_in_local_currency_dmbtr {

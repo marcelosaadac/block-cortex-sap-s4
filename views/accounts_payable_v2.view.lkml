@@ -1,5 +1,5 @@
 view: accounts_payable_v2 {
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_S4}.AccountsPayable`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.AccountsPayable`
     ;;
 
   parameter: Aging_Interval {
