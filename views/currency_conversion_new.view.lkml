@@ -1,7 +1,7 @@
 view: currency_conversion_new {
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.CurrencyConversion`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.CurrencyConversion`
     ;;
-  
+
   fields_hidden_by_default: yes
 
   dimension: key {
@@ -9,7 +9,7 @@ view: currency_conversion_new {
     primary_key: yes
     sql: CONCAT(${mandt},${kurst},${fcurr},${tcurr},${conv_date_1});;
   }
-  
+
   dimension_group: conv {
     type: time
     timeframes: [

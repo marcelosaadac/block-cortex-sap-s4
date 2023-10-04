@@ -1,7 +1,7 @@
 view: materials_md {
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.MaterialsMD`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.MaterialsMD`
     ;;
-  
+
   fields_hidden_by_default: yes
 
   dimension: key {
@@ -9,7 +9,7 @@ view: materials_md {
     primary_key: yes
     sql: CONCAT(${client_mandt},${material_number_matnr},${language_spras});;
   }
-  
+
   dimension: acceptance_at_origin_weora {
     type: string
     sql: ${TABLE}.AcceptanceAtOrigin_WEORA ;;

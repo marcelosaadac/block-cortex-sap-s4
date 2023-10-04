@@ -2,13 +2,13 @@
 view: one_touch_order {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.OneTouchOrder`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.OneTouchOrder`
     ;;
 
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Actual Billed Quantity Fkimg" in Explore.
-  
+
   fields_hidden_by_default: yes
 
   dimension: key {
@@ -16,7 +16,7 @@ view: one_touch_order {
     primary_key: yes
     sql: CONCAT(${vbapclient_mandt},${vbapsales_document_item_posnr},${vbapsales_document_vbeln});;
   }
-  
+
   dimension: actual_billed_quantity_fkimg {
     type: number
     sql: ${TABLE}.ActualBilledQuantity_FKIMG ;;

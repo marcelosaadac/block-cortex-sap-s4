@@ -2,13 +2,13 @@
 view: sales_order_pricing {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.SalesOrderPricing`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.SalesOrderPricing`
     ;;
 
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Access Sequence Access Number Kolnr" in Explore.
-  
+
   fields_hidden_by_default: yes
 
   dimension: key {

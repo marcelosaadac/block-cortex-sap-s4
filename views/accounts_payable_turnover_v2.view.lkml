@@ -1,6 +1,6 @@
 view: accounts_payable_turnover_v2 {
 
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.AccountsPayableTurnover`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_S4}.AccountsPayableTurnover`
     ;;
 
   fields_hidden_by_default: yes

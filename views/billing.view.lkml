@@ -2,14 +2,14 @@
 view: billing {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.Billing`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.Billing`
     ;;
 
 
   # Here's what a typical dimension looks like in LookML.
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Accounting Document Number Belnr" in Explore.
-  
+
   fields_hidden_by_default: yes
 
   dimension: key {
@@ -17,7 +17,7 @@ view: billing {
     primary_key: yes
     sql: CONCAT(${client_mandt},${billing_document_vbeln},${billing_item_posnr});;
   }
-  
+
   dimension: accounting_document_number_belnr {
     type: string
     sql: ${TABLE}.AccountingDocumentNumber_BELNR ;;
@@ -32,7 +32,7 @@ view: billing {
     type: number
     sql: ${TABLE}.ActualBilledQuantity_FKIMG ;;
   }
-  
+
   measure: total_actual_billed_quantity_fkimg {
     type: number
     sql: SUM(${actual_billed_quantity_fkimg}) ;;

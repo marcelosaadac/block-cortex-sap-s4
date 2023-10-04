@@ -2,7 +2,7 @@
 view: sales_order_partner_function {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET}.SalesOrderPartnerFunction`
+  sql_table_name: `@{GCP_PROJECT}.@{REPORTING_DATASET_ECC}.SalesOrderPartnerFunction`
     ;;
 
   # Here's what a typical dimension looks like in LookML.
@@ -14,7 +14,7 @@ view: sales_order_partner_function {
     primary_key: yes
     sql: CONCAT(${client_mandt},${item_posnr},${sales_document_vbeln},${partner_function_parvw});;
   }
-  
+
   dimension: address_adrnr {
     type: string
     sql: ${TABLE}.Address_ADRNR ;;
